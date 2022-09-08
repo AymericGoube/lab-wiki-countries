@@ -5,14 +5,15 @@ import country from '../countries.json';
 const CountriesList = () => {
   const [stateApp, setStateApp] = useState(country);
 
-  const CodeOfCountry = (props) => {
-    console.log(props);
+  const CodeOfCountry = () => {
     return stateApp.map((country) => {
       return (
         <Link
           className="list-group-item list-group-item-action"
-          to={props.alpha3Code}
-        ></Link>
+          to={country.alpha3Code}
+        >
+          {country.name.common}
+        </Link>
       );
     });
   };
